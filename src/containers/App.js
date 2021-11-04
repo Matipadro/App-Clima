@@ -6,7 +6,7 @@ import Cards from '../components/Cards.jsx';
 import About from '../components/About.jsx';
 import Ciudad from '../components/Ciudad.jsx';
 
-const API_KEY = '4ae2636d8dfbdc3044bede63951a019b';
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
 
