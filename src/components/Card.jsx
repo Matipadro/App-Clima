@@ -1,29 +1,42 @@
 import React from 'react';
-import styles from './styles/Card.module.css';
-import CardTemp from './CardTemp';
+import './styles/Card.css';
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
 
-export default function Card({max, min, name, img, onClose}) {
-  // acá va tu código
+export default function Card ({min, max, name, img, onClose, id}) {
 
-  function handleOnClose(){
-    if(typeof onClose === 'function') onClose();
+  function handleOnClose() {
+    if(typeof onClose === "function") onClose();
   }
 
-  return (<div className={styles.cardBox}>
-    <h2>{name}</h2>
-    <div className={styles.state}>
-        <div>
-            <CardTemp label='Min' value={min} />
-            <CardTemp label='Max' value={max} />
+    return (
+      <div className="card">
+        <div id="closeIcon" className="row">
+            <button onClick={handleOnClose} className="btn btn-sm btn-danger">X</button>
         </div>
-        <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="icono clima" />
-    </div>
-    <button onClick={handleOnClose}>X</button>
-  </div>);
+        <div className="card-body">
+        <Link className="card-title" to={`/ciudad/${id}`} >
+          <h5 >{name}</h5>
+          </Link>
+          <div className="row">
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <p>Min</p>
+              <p>{min}°</p>
+            </div>
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <p>Max</p>
+              <p>{max}°</p>
+            </div>
+            <div className="col-sm-4 col-md-4 col-lg-4">
+              <img className="iconoClima" src={"http://openweathermap.org/img/wn/"+img+"@2x.png"} width="80" height="80" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
 };
 
-Card.propTypes = {
+Card.propTypes ={
   max: PropTypes.number,
   min: PropTypes.number,
   name: PropTypes.string,

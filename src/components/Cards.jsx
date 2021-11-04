@@ -1,24 +1,21 @@
 import React from 'react';
-import Card from './Card';
-import styles from './styles/Cards.module.css';
+import './styles/Cards.css';
+import Card from './Card.jsx';
 
-export default function Cards({cities}) {
-  // acá va tu código
-  // tip, podés usar un map
-  return ( 
-  <div className={styles.allCards}>
-    {cities.map((city) => (
-        <Card 
-            key={city.id} 
-            min={city.main.temp_min} 
-            max={city.main.temp_max} 
-            name={city.name} 
-            img={city.weather[0].icon} 
-            onClose={() => alert(city.name)}
-            />
-          )
-          )
-        }
-  </div>
+export default function Cards({cities, onRemove}) {
+  return (
+    <div className='cards'>
+      {cities.map((city) => (
+      <Card
+          key={city.id}
+          max={city.max}
+          min={city.min}
+          name={city.name}
+          img={city.img}
+          id={city.id}
+          onClose={() => onRemove(city.id)}
+        />
+      ))}
+    </div>
   );
 }

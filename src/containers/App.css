@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  background: url(./components/resources/img/bg.jpg);
+  background: url(../components/resources/img/bg.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
