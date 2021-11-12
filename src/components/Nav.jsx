@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './resources/img/logoHenry.png';
+import Logo from './resources/img/logo-buhoblanco.png';
 import SearchBar from './SearchBar.jsx';
 import './styles/Nav.css';
 
@@ -8,11 +8,10 @@ import { Link } from 'react-router-dom';
 
 function Nav({onSearch}) {
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar">
       <Link to='/'>
-        <span className="navbar-brand">
-          <img id="logoHenry" src={Logo} width="30" height="30" className="d-inline-block align-top" alt="" />
-          Henry - Weather App
+        <span className="navbar-logo">
+          <img id="logoArkhaine" src={Logo} alt="Logo Arkhaine" />
         </span>
         </Link>
         <Link to="/about">

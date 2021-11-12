@@ -12,13 +12,10 @@
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 100vh;
-  backdrop-filter: invert(75%); 
 }
 
 .Cards-content{
   margin-top: 200px;
-  outline: 1px solid red;
   position: relative;
 }
 
